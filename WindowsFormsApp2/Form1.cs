@@ -35,14 +35,14 @@ namespace WindowsFormsApp2
 
         private void b_Click(object sender, EventArgs e)
         {
-            string con = "Data Source = (LocalDB)\\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\\Database1.mdf;Integrated Security=True";
-            string cmd = "Select * from dbo.[Table] where name='divya'";
+            //   string con = "Data Source = (LocalDB)\\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\\Database1.mdf;Integrated Security=True";
+            string cmd  = "Select * from Users";
             SqlDataAdapter dp = new SqlDataAdapter(cmd, con);
-            SqlCommandBuilder cb = new SqlCommandBuilder(dp);
+          //  SqlCommandBuilder cb = new SqlCommandBuilder(dp);
             DataTable dt = new DataTable();
-            dp.Fill(dt);
+           dp.Fill(dt);
             BindingSource bs = new BindingSource();
-            bs.DataSource = dt;
+           bs.DataSource = dt;
 
             dataGridView2.DataSource = bs;
             
@@ -51,7 +51,25 @@ namespace WindowsFormsApp2
 
         private void save_Click(object sender, EventArgs e)
         {
-           
+            con.Open();
+            SqlCommand cmd = con.CreateCommand();
+            cmd.CommandType = CommandType.Text;
+            cmd.CommandText = "Insert into Users values('" + ID.Text + "','" + name.Text + "','" + salary.Text+"')";
+            cmd.ExecuteNonQuery();
+            con.Close();
+            MessageBox.Show("saved");
+
+
+        }
+
+        private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void update_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

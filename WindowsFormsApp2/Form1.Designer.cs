@@ -38,23 +38,23 @@
             this.tableBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.database1DataSet = new WindowsFormsApp2.Database1DataSet();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.salary = new System.Windows.Forms.TextBox();
+            this.name = new System.Windows.Forms.TextBox();
+            this.ID = new System.Windows.Forms.TextBox();
+            this.labelname = new System.Windows.Forms.Label();
+            this.labelsal = new System.Windows.Forms.Label();
+            this.labelID = new System.Windows.Forms.Label();
+            this.exit = new System.Windows.Forms.Button();
+            this.display = new System.Windows.Forms.Button();
+            this.delete = new System.Windows.Forms.Button();
+            this.update = new System.Windows.Forms.Button();
+            this.save = new System.Windows.Forms.Button();
             this.b = new System.Windows.Forms.Button();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.tableTableAdapter = new WindowsFormsApp2.Database1DataSetTableAdapters.TableTableAdapter();
             this.database1DataSet1 = new WindowsFormsApp2.Database1DataSet1();
             this.tableBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.tableTableAdapter1 = new WindowsFormsApp2.Database1DataSet1TableAdapters.TableTableAdapter();
-            this.save = new System.Windows.Forms.Button();
-            this.update = new System.Windows.Forms.Button();
-            this.delete = new System.Windows.Forms.Button();
-            this.display = new System.Windows.Forms.Button();
-            this.exit = new System.Windows.Forms.Button();
-            this.labelID = new System.Windows.Forms.Label();
-            this.labelsal = new System.Windows.Forms.Label();
-            this.labelname = new System.Windows.Forms.Label();
-            this.ID = new System.Windows.Forms.TextBox();
-            this.name = new System.Windows.Forms.TextBox();
-            this.salary = new System.Windows.Forms.TextBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -153,6 +153,101 @@
             this.tabPage2.Text = "dynamicaccessfromdatabase";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
+            // salary
+            // 
+            this.salary.Location = new System.Drawing.Point(123, 129);
+            this.salary.Name = "salary";
+            this.salary.Size = new System.Drawing.Size(100, 20);
+            this.salary.TabIndex = 12;
+            // 
+            // name
+            // 
+            this.name.Location = new System.Drawing.Point(123, 89);
+            this.name.Name = "name";
+            this.name.Size = new System.Drawing.Size(100, 20);
+            this.name.TabIndex = 11;
+            // 
+            // ID
+            // 
+            this.ID.Location = new System.Drawing.Point(123, 51);
+            this.ID.Name = "ID";
+            this.ID.Size = new System.Drawing.Size(100, 20);
+            this.ID.TabIndex = 10;
+            // 
+            // labelname
+            // 
+            this.labelname.AutoSize = true;
+            this.labelname.Location = new System.Drawing.Point(46, 92);
+            this.labelname.Name = "labelname";
+            this.labelname.Size = new System.Drawing.Size(38, 13);
+            this.labelname.TabIndex = 9;
+            this.labelname.Text = "NAME";
+            // 
+            // labelsal
+            // 
+            this.labelsal.AutoSize = true;
+            this.labelsal.Location = new System.Drawing.Point(46, 136);
+            this.labelsal.Name = "labelsal";
+            this.labelsal.Size = new System.Drawing.Size(36, 13);
+            this.labelsal.TabIndex = 8;
+            this.labelsal.Text = "Salary";
+            // 
+            // labelID
+            // 
+            this.labelID.AutoSize = true;
+            this.labelID.Location = new System.Drawing.Point(55, 54);
+            this.labelID.Name = "labelID";
+            this.labelID.Size = new System.Drawing.Size(18, 13);
+            this.labelID.TabIndex = 7;
+            this.labelID.Text = "ID";
+            // 
+            // exit
+            // 
+            this.exit.Location = new System.Drawing.Point(453, 221);
+            this.exit.Name = "exit";
+            this.exit.Size = new System.Drawing.Size(75, 23);
+            this.exit.TabIndex = 6;
+            this.exit.Text = "exit";
+            this.exit.UseVisualStyleBackColor = true;
+            // 
+            // display
+            // 
+            this.display.Location = new System.Drawing.Point(354, 221);
+            this.display.Name = "display";
+            this.display.Size = new System.Drawing.Size(75, 23);
+            this.display.TabIndex = 5;
+            this.display.Text = "display";
+            this.display.UseVisualStyleBackColor = true;
+            // 
+            // delete
+            // 
+            this.delete.Location = new System.Drawing.Point(260, 221);
+            this.delete.Name = "delete";
+            this.delete.Size = new System.Drawing.Size(75, 23);
+            this.delete.TabIndex = 4;
+            this.delete.Text = "delete";
+            this.delete.UseVisualStyleBackColor = true;
+            // 
+            // update
+            // 
+            this.update.Location = new System.Drawing.Point(160, 221);
+            this.update.Name = "update";
+            this.update.Size = new System.Drawing.Size(75, 23);
+            this.update.TabIndex = 3;
+            this.update.Text = "update";
+            this.update.UseVisualStyleBackColor = true;
+            this.update.Click += new System.EventHandler(this.update_Click);
+            // 
+            // save
+            // 
+            this.save.Location = new System.Drawing.Point(58, 221);
+            this.save.Name = "save";
+            this.save.Size = new System.Drawing.Size(75, 23);
+            this.save.TabIndex = 2;
+            this.save.Text = "save";
+            this.save.UseVisualStyleBackColor = true;
+            this.save.Click += new System.EventHandler(this.save_Click);
+            // 
             // b
             // 
             this.b.Location = new System.Drawing.Point(260, 277);
@@ -170,6 +265,7 @@
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.Size = new System.Drawing.Size(268, 150);
             this.dataGridView2.TabIndex = 0;
+            this.dataGridView2.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellContentClick);
             // 
             // tableTableAdapter
             // 
@@ -188,100 +284,6 @@
             // tableTableAdapter1
             // 
             this.tableTableAdapter1.ClearBeforeFill = true;
-            // 
-            // save
-            // 
-            this.save.Location = new System.Drawing.Point(58, 221);
-            this.save.Name = "save";
-            this.save.Size = new System.Drawing.Size(75, 23);
-            this.save.TabIndex = 2;
-            this.save.Text = "save";
-            this.save.UseVisualStyleBackColor = true;
-            this.save.Click += new System.EventHandler(this.save_Click);
-            // 
-            // update
-            // 
-            this.update.Location = new System.Drawing.Point(160, 221);
-            this.update.Name = "update";
-            this.update.Size = new System.Drawing.Size(75, 23);
-            this.update.TabIndex = 3;
-            this.update.Text = "update";
-            this.update.UseVisualStyleBackColor = true;
-            // 
-            // delete
-            // 
-            this.delete.Location = new System.Drawing.Point(260, 221);
-            this.delete.Name = "delete";
-            this.delete.Size = new System.Drawing.Size(75, 23);
-            this.delete.TabIndex = 4;
-            this.delete.Text = "delete";
-            this.delete.UseVisualStyleBackColor = true;
-            // 
-            // display
-            // 
-            this.display.Location = new System.Drawing.Point(354, 221);
-            this.display.Name = "display";
-            this.display.Size = new System.Drawing.Size(75, 23);
-            this.display.TabIndex = 5;
-            this.display.Text = "display";
-            this.display.UseVisualStyleBackColor = true;
-            // 
-            // exit
-            // 
-            this.exit.Location = new System.Drawing.Point(453, 221);
-            this.exit.Name = "exit";
-            this.exit.Size = new System.Drawing.Size(75, 23);
-            this.exit.TabIndex = 6;
-            this.exit.Text = "exit";
-            this.exit.UseVisualStyleBackColor = true;
-            // 
-            // labelID
-            // 
-            this.labelID.AutoSize = true;
-            this.labelID.Location = new System.Drawing.Point(55, 54);
-            this.labelID.Name = "labelID";
-            this.labelID.Size = new System.Drawing.Size(18, 13);
-            this.labelID.TabIndex = 7;
-            this.labelID.Text = "ID";
-            // 
-            // labelsal
-            // 
-            this.labelsal.AutoSize = true;
-            this.labelsal.Location = new System.Drawing.Point(46, 136);
-            this.labelsal.Name = "labelsal";
-            this.labelsal.Size = new System.Drawing.Size(36, 13);
-            this.labelsal.TabIndex = 8;
-            this.labelsal.Text = "Salary";
-            // 
-            // labelname
-            // 
-            this.labelname.AutoSize = true;
-            this.labelname.Location = new System.Drawing.Point(46, 92);
-            this.labelname.Name = "labelname";
-            this.labelname.Size = new System.Drawing.Size(38, 13);
-            this.labelname.TabIndex = 9;
-            this.labelname.Text = "NAME";
-            // 
-            // ID
-            // 
-            this.ID.Location = new System.Drawing.Point(123, 51);
-            this.ID.Name = "ID";
-            this.ID.Size = new System.Drawing.Size(100, 20);
-            this.ID.TabIndex = 10;
-            // 
-            // name
-            // 
-            this.name.Location = new System.Drawing.Point(123, 89);
-            this.name.Name = "name";
-            this.name.Size = new System.Drawing.Size(100, 20);
-            this.name.TabIndex = 11;
-            // 
-            // salary
-            // 
-            this.salary.Location = new System.Drawing.Point(123, 129);
-            this.salary.Name = "salary";
-            this.salary.Size = new System.Drawing.Size(100, 20);
-            this.salary.TabIndex = 12;
             // 
             // Form1
             // 

@@ -49,7 +49,6 @@
             this.delete = new System.Windows.Forms.Button();
             this.update = new System.Windows.Forms.Button();
             this.save = new System.Windows.Forms.Button();
-            this.b = new System.Windows.Forms.Button();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.tableTableAdapter = new WindowsFormsApp2.Database1DataSetTableAdapters.TableTableAdapter();
             this.database1DataSet1 = new WindowsFormsApp2.Database1DataSet1();
@@ -143,7 +142,6 @@
             this.tabPage2.Controls.Add(this.delete);
             this.tabPage2.Controls.Add(this.update);
             this.tabPage2.Controls.Add(this.save);
-            this.tabPage2.Controls.Add(this.b);
             this.tabPage2.Controls.Add(this.dataGridView2);
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
@@ -209,6 +207,7 @@
             this.exit.TabIndex = 6;
             this.exit.Text = "exit";
             this.exit.UseVisualStyleBackColor = true;
+            this.exit.Click += new System.EventHandler(this.exit_Click);
             // 
             // display
             // 
@@ -218,6 +217,7 @@
             this.display.TabIndex = 5;
             this.display.Text = "display";
             this.display.UseVisualStyleBackColor = true;
+            this.display.Click += new System.EventHandler(this.display_Click);
             // 
             // delete
             // 
@@ -227,6 +227,7 @@
             this.delete.TabIndex = 4;
             this.delete.Text = "delete";
             this.delete.UseVisualStyleBackColor = true;
+            this.delete.Click += new System.EventHandler(this.delete_Click);
             // 
             // update
             // 
@@ -247,16 +248,6 @@
             this.save.Text = "save";
             this.save.UseVisualStyleBackColor = true;
             this.save.Click += new System.EventHandler(this.save_Click);
-            // 
-            // b
-            // 
-            this.b.Location = new System.Drawing.Point(260, 277);
-            this.b.Name = "b";
-            this.b.Size = new System.Drawing.Size(75, 23);
-            this.b.TabIndex = 1;
-            this.b.Text = "Fetch";
-            this.b.UseVisualStyleBackColor = true;
-            this.b.Click += new System.EventHandler(this.b_Click);
             // 
             // dataGridView2
             // 
@@ -321,7 +312,6 @@
         private Database1DataSet1 database1DataSet1;
         private System.Windows.Forms.BindingSource tableBindingSource1;
         private Database1DataSet1TableAdapters.TableTableAdapter tableTableAdapter1;
-        private System.Windows.Forms.Button b;
         private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn salaryDataGridViewTextBoxColumn;

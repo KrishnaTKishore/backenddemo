@@ -38,6 +38,7 @@
             this.tableBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.database1DataSet = new WindowsFormsApp2.Database1DataSet();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.select = new System.Windows.Forms.Button();
             this.salary = new System.Windows.Forms.TextBox();
             this.name = new System.Windows.Forms.TextBox();
             this.ID = new System.Windows.Forms.TextBox();
@@ -54,6 +55,11 @@
             this.database1DataSet1 = new WindowsFormsApp2.Database1DataSet1();
             this.tableBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.tableTableAdapter1 = new WindowsFormsApp2.Database1DataSet1TableAdapters.TableTableAdapter();
+            this.saveimg = new System.Windows.Forms.Button();
+            this.img = new System.Windows.Forms.TextBox();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.openFileDialog2 = new System.Windows.Forms.OpenFileDialog();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -63,6 +69,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.database1DataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tableBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -131,6 +138,10 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.pictureBox1);
+            this.tabPage2.Controls.Add(this.img);
+            this.tabPage2.Controls.Add(this.saveimg);
+            this.tabPage2.Controls.Add(this.select);
             this.tabPage2.Controls.Add(this.salary);
             this.tabPage2.Controls.Add(this.name);
             this.tabPage2.Controls.Add(this.ID);
@@ -150,6 +161,17 @@
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "dynamicaccessfromdatabase";
             this.tabPage2.UseVisualStyleBackColor = true;
+            this.tabPage2.Click += new System.EventHandler(this.tabPage2_Click);
+            // 
+            // select
+            // 
+            this.select.Location = new System.Drawing.Point(160, 303);
+            this.select.Name = "select";
+            this.select.Size = new System.Drawing.Size(75, 23);
+            this.select.TabIndex = 13;
+            this.select.Text = "select";
+            this.select.UseVisualStyleBackColor = true;
+            this.select.Click += new System.EventHandler(this.select_Click);
             // 
             // salary
             // 
@@ -276,6 +298,42 @@
             // 
             this.tableTableAdapter1.ClearBeforeFill = true;
             // 
+            // saveimg
+            // 
+            this.saveimg.Location = new System.Drawing.Point(160, 343);
+            this.saveimg.Name = "saveimg";
+            this.saveimg.Size = new System.Drawing.Size(75, 19);
+            this.saveimg.TabIndex = 14;
+            this.saveimg.Text = "save";
+            this.saveimg.UseVisualStyleBackColor = true;
+            this.saveimg.Click += new System.EventHandler(this.saveimg_Click);
+            // 
+            // img
+            // 
+            this.img.Location = new System.Drawing.Point(47, 303);
+            this.img.Name = "img";
+            this.img.Size = new System.Drawing.Size(100, 20);
+            this.img.TabIndex = 15;
+            // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.FileName = "openFileDialog1";
+            this.openFileDialog1.FileOk += new System.ComponentModel.CancelEventHandler(this.openFileDialog1_FileOk);
+            // 
+            // openFileDialog2
+            // 
+            this.openFileDialog2.FileName = "openFileDialog2";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.ImageLocation = "";
+            this.pictureBox1.Location = new System.Drawing.Point(241, 261);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(200, 200);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pictureBox1.TabIndex = 16;
+            this.pictureBox1.TabStop = false;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -295,6 +353,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.database1DataSet1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tableBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -326,6 +385,12 @@
         private System.Windows.Forms.Label labelname;
         private System.Windows.Forms.Label labelsal;
         private System.Windows.Forms.Label labelID;
+        private System.Windows.Forms.Button select;
+        private System.Windows.Forms.TextBox img;
+        private System.Windows.Forms.Button saveimg;
+        private System.Windows.Forms.OpenFileDialog openFileDialog1;
+        private System.Windows.Forms.OpenFileDialog openFileDialog2;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
 

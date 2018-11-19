@@ -8,12 +8,15 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using System.IO;
+
 
 namespace WindowsFormsApp2
 {
     public partial class Form1 : Form
     {
         SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Student\source\repos\WindowsFormsApp2\WindowsFormsApp2\Database1.mdf;Integrated Security=True");
+        //SqlConnection con1 = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;Att
         public Form1()
         {
             InitializeComponent();
@@ -104,6 +107,40 @@ namespace WindowsFormsApp2
         private void exit_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void tabPage2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void openFileDialog1_FileOk(object sender, CancelEventArgs e)
+        {
+          
+        }
+
+        private void select_Click(object sender, EventArgs e)
+        {
+            if (openFileDialog1.ShowDialog() == DialogResult.OK)
+                img.Text = openFileDialog1.FileName;
+
+            pictureBox1.ImageLocation = img.Text;
+          //pictureBox1.Image = Convert.ToSByte(openFileDialog1.FileName);
+        }
+
+        private void saveimg_Click(object sender, EventArgs e)
+        {
+            con.Open();
+            SqlCommand cmd1 = con.CreateCommand();
+            cmd1.CommandType = CommandType.Text;
+            //FileStream fs1 = new FileStream(img.Text);
+            Byte[] mypic = File.ReadAllBytes(openFileDialog1.FileName);
+
+            cmd1.CommandText = "Insert into imagestore values('" + ID.Text + "','" +pictureBox1.Image + "')";
+            cmd1.ExecuteNonQuery();
+            con.Close();
+            MessageBox.Show("saved");
+
         }
     }
 }

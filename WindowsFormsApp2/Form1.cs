@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 using System.IO;
+using System.Drawing.Imaging;
 
 
 namespace WindowsFormsApp2
@@ -124,7 +125,7 @@ namespace WindowsFormsApp2
             if (openFileDialog1.ShowDialog() == DialogResult.OK)
                 img.Text = openFileDialog1.FileName;
 
-            pictureBox1.ImageLocation = img.Text;
+           // pictureBox1.ImageLocation = img.Text;
           //pictureBox1.Image = Convert.ToSByte(openFileDialog1.FileName);
         }
 
@@ -140,6 +141,30 @@ namespace WindowsFormsApp2
             cmd1.ExecuteNonQuery();
             con.Close();
             MessageBox.Show("saved");
+
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void shwimg_Click(object sender, EventArgs e)
+        {
+            con.Open();
+            SqlDataAdapter sda=new SqlDataAdapter("select * from imagestore where Id="+ ID.Text ,con);
+            DataTable dt = new DataTable();
+            sda.Fill(dt);
+            byte[] mydata = new byte[0];
+            mydata = (byte[])dt.Rows[0][1];
+            MemoryStream ms = new MemoryStream(mydata);       
+            pictureBox1.Image = Image.FromStream(ms);
+            con.Close();
+           
+        }
+
+        private void img_TextChanged(object sender, EventArgs e)
+        {
 
         }
     }

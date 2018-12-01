@@ -38,6 +38,12 @@
             this.tableBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.database1DataSet = new WindowsFormsApp2.Database1DataSet();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.shwimg = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.img = new System.Windows.Forms.TextBox();
+            this.saveimg = new System.Windows.Forms.Button();
             this.select = new System.Windows.Forms.Button();
             this.salary = new System.Windows.Forms.TextBox();
             this.name = new System.Windows.Forms.TextBox();
@@ -55,21 +61,18 @@
             this.database1DataSet1 = new WindowsFormsApp2.Database1DataSet1();
             this.tableBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.tableTableAdapter1 = new WindowsFormsApp2.Database1DataSet1TableAdapters.TableTableAdapter();
-            this.saveimg = new System.Windows.Forms.Button();
-            this.img = new System.Windows.Forms.TextBox();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.openFileDialog2 = new System.Windows.Forms.OpenFileDialog();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tableBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.database1DataSet)).BeginInit();
             this.tabPage2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.database1DataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tableBindingSource1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -79,7 +82,7 @@
             this.tabControl1.Location = new System.Drawing.Point(31, 12);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(602, 394);
+            this.tabControl1.Size = new System.Drawing.Size(757, 426);
             this.tabControl1.TabIndex = 0;
             // 
             // tabPage1
@@ -88,7 +91,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(594, 368);
+            this.tabPage1.Size = new System.Drawing.Size(749, 400);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "staticaccessfromdatabase";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -138,6 +141,9 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.dateTimePicker1);
+            this.tabPage2.Controls.Add(this.textBox1);
+            this.tabPage2.Controls.Add(this.shwimg);
             this.tabPage2.Controls.Add(this.pictureBox1);
             this.tabPage2.Controls.Add(this.img);
             this.tabPage2.Controls.Add(this.saveimg);
@@ -157,11 +163,64 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(594, 368);
+            this.tabPage2.Size = new System.Drawing.Size(749, 400);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "dynamicaccessfromdatabase";
             this.tabPage2.UseVisualStyleBackColor = true;
             this.tabPage2.Click += new System.EventHandler(this.tabPage2_Click);
+            // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.Location = new System.Drawing.Point(295, 182);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
+            this.dateTimePicker1.TabIndex = 19;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(576, 300);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(135, 20);
+            this.textBox1.TabIndex = 18;
+            // 
+            // shwimg
+            // 
+            this.shwimg.Location = new System.Drawing.Point(636, 339);
+            this.shwimg.Name = "shwimg";
+            this.shwimg.Size = new System.Drawing.Size(75, 23);
+            this.shwimg.TabIndex = 17;
+            this.shwimg.Text = "Show Image";
+            this.shwimg.UseVisualStyleBackColor = true;
+            this.shwimg.Click += new System.EventHandler(this.shwimg_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.ImageLocation = "";
+            this.pictureBox1.Location = new System.Drawing.Point(260, 250);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(268, 200);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pictureBox1.TabIndex = 16;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            // 
+            // img
+            // 
+            this.img.Location = new System.Drawing.Point(6, 303);
+            this.img.Name = "img";
+            this.img.Size = new System.Drawing.Size(141, 20);
+            this.img.TabIndex = 15;
+            this.img.TextChanged += new System.EventHandler(this.img_TextChanged);
+            // 
+            // saveimg
+            // 
+            this.saveimg.Location = new System.Drawing.Point(160, 343);
+            this.saveimg.Name = "saveimg";
+            this.saveimg.Size = new System.Drawing.Size(75, 19);
+            this.saveimg.TabIndex = 14;
+            this.saveimg.Text = "save";
+            this.saveimg.UseVisualStyleBackColor = true;
+            this.saveimg.Click += new System.EventHandler(this.saveimg_Click);
             // 
             // select
             // 
@@ -298,23 +357,6 @@
             // 
             this.tableTableAdapter1.ClearBeforeFill = true;
             // 
-            // saveimg
-            // 
-            this.saveimg.Location = new System.Drawing.Point(160, 343);
-            this.saveimg.Name = "saveimg";
-            this.saveimg.Size = new System.Drawing.Size(75, 19);
-            this.saveimg.TabIndex = 14;
-            this.saveimg.Text = "save";
-            this.saveimg.UseVisualStyleBackColor = true;
-            this.saveimg.Click += new System.EventHandler(this.saveimg_Click);
-            // 
-            // img
-            // 
-            this.img.Location = new System.Drawing.Point(47, 303);
-            this.img.Name = "img";
-            this.img.Size = new System.Drawing.Size(100, 20);
-            this.img.TabIndex = 15;
-            // 
             // openFileDialog1
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
@@ -323,16 +365,6 @@
             // openFileDialog2
             // 
             this.openFileDialog2.FileName = "openFileDialog2";
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.ImageLocation = "";
-            this.pictureBox1.Location = new System.Drawing.Point(241, 261);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(200, 200);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pictureBox1.TabIndex = 16;
-            this.pictureBox1.TabStop = false;
             // 
             // Form1
             // 
@@ -350,10 +382,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.database1DataSet)).EndInit();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.database1DataSet1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tableBindingSource1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -391,6 +423,9 @@
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.OpenFileDialog openFileDialog2;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Button shwimg;
+        private System.Windows.Forms.DateTimePicker dateTimePicker1;
     }
 }
 
